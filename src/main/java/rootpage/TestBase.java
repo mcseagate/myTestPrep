@@ -46,10 +46,13 @@ public class TestBase {
         }
         else{
             System.out.println("Browser Type Not in Use");
-            driver.manage().timeouts().implicitlyWait(ConfigFiles.IMPLICIT_WAIT, TimeUnit.SECONDS);
-            driver.manage().timeouts().pageLoadTimeout(ConfigFiles.PAGE_TIMEOUT, TimeUnit.SECONDS);
-            driver.manage().window().maximize();
-            driver.get(prop.getProperty("url"));
+
         }
+        String url = "https://www.mail.com/#";
+        driver.manage().timeouts().implicitlyWait(ConfigFiles.IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(ConfigFiles.PAGE_TIMEOUT, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.get(url);
     }
+
 }
