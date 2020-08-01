@@ -1,7 +1,5 @@
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.*;
 import rootpage.TestBase;
 
 public class LoginTest extends TestBase {
@@ -12,7 +10,7 @@ public class LoginTest extends TestBase {
         super();
     }
 
-    @BeforeMethod
+    @BeforeTest
 
     public void setUp(){
         initialization();
@@ -22,12 +20,27 @@ public class LoginTest extends TestBase {
     public void userlogintest(){
         lp = new LoginPage();
         lp.login();
-
     }
 
-    @AfterMethod
+    @Test
+    public void ReturnTitle(){
+        String title = driver.getTitle();
+        if(title != null){
+            System.out.println(title);
+        }
+        else{
+            System.out.println("Page has no title");
+        }
+    }
+
+    @AfterTest
     public void teardown(){
-        driver.quit();
+
+        if(driver != null){
+            driver.quit();
+            driver = null;
+        }
+
     }
 
 
