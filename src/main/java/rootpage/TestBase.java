@@ -36,6 +36,7 @@ public class TestBase {
         String BrowserName = prop.getProperty("browser");
         String chromeDriverPath = "/Users/michaelgodfrey/IdeaProjects/myTestPrep/drivers/chromedriver";
         String firefoxDriverPath = "../drivers/geckodriver";
+
         if(BrowserName.equalsIgnoreCase("Chrome")){
             System.setProperty("webdriver.chrome.driver", chromeDriverPath);
             driver = new ChromeDriver();

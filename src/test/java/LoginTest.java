@@ -6,13 +6,15 @@ public class LoginTest extends TestBase {
 
     LoginPage lp;
 
-    public LoginTest(){
+    public LoginTest() {
+
         super();
     }
 
     @BeforeTest
 
     public void setUp(){
+
         initialization();
     }
 
@@ -23,7 +25,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void ReturnTitle(){
+    public void verifyTitle(){
         String title = driver.getTitle();
         if(title != null){
             System.out.println(title);
@@ -34,7 +36,7 @@ public class LoginTest extends TestBase {
     }
 
     @AfterTest
-    public void teardown(){
+    public void tearDown(){
 
         if(driver != null){
             driver.quit();
